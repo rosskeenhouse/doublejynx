@@ -1,0 +1,62 @@
+{
+  "$id": "certificate.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "certificate",
+  "type": "object",
+  "required": [ "path", "filetype" ],
+  "properties": {
+    "SerialNumber": {
+      "type": "integer",
+			"description": "Serial number",
+			"minLength": 1
+    },
+    "Issuer": {
+      "$ref": "pkixname.schema.json"
+    },
+    "Subject": {
+      "$ref": "pkixname.schema.json"
+    },
+    "NotBefore": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Cert is not valid before time in YYYY-MM-DDTHH:MM:SS.sssssssssZ format."
+    },
+    "NotAfter": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Cert is not valid after time in YYYY-MM-DDTHH:MM:SS.sssssssssZ format."
+    },
+    "KeyUsage": {
+			"type": "integer",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "description": "Actions valid for a key.  E.g. 1 = KeyUsageDigitalSignature"
+    },
+    "ExtKeyUsage": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 13
+      },
+      "description": "Extended set of actions valid for a key"
+    },
+    "BasicConstraintsValid": {
+      "type": "boolean",
+      "description": "BasicConstraintsValid indicates whether IsCA, MaxPathLen, and MaxPathLenZero are valid"
+    },
+    "IsCA": {
+      "type": "boolean",
+      "description": ""
+    }
+  }
+}

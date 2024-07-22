@@ -1,0 +1,20 @@
+{
+  "$id": "container-image-declaration.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "container-image-declaration",
+  "type": "object",
+  "required": [ "type", "attributes" ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Resource type name.",
+      "enum": [ "container-image" ]
+    },
+    "transition": {
+      "$ref": "storagetransition.schema.json"
+    },
+    "attributes": {
+      "$ref": "container-image.schema.json"
+    }
+  }
+}

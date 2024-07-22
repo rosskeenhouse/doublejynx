@@ -1,0 +1,31 @@
+{
+  "$id": "document.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "document",
+  "type": "object",
+  "required": [ "resources" ],
+  "properties": {
+    "resources": {
+      "type": "array",
+      "description": "Resources list",
+      "items": {
+        "oneOf": [
+          { "$ref": "certificate-declaration.schema.json" },
+          { "$ref": "container-declaration.schema.json" },
+          { "$ref": "container-network-declaration.schema.json" },
+          { "$ref": "container-image-declaration.schema.json" },
+          { "$ref": "exec-declaration.schema.json" },
+          { "$ref": "file-declaration.schema.json" },
+          { "$ref": "group-declaration.schema.json" },
+          { "$ref": "http-declaration.schema.json" },
+          { "$ref": "iptable-declaration.schema.json" },
+          { "$ref": "network-route-declaration.schema.json" },
+          { "$ref": "package-declaration.schema.json" },
+          { "$ref": "pki-declaration.schema.json" },
+          { "$ref": "user-declaration.schema.json" }
+        ]
+      }
+    }
+  }
+}
+

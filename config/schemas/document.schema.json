@@ -1,0 +1,19 @@
+{
+  "$id": "document.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "document",
+  "type": "object",
+  "required": [ "configurations" ],
+  "properties": {
+    "configurations": {
+      "type": "array",
+      "description": "Configurations list",
+      "items": {
+        "oneOf": [
+          { "$ref": "block.schema.json" }
+        ]
+      }
+    }
+  }
+}
+

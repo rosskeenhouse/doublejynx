@@ -1,0 +1,21 @@
+{
+  "$id": "iptable-declaration.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "iptable-declaration",
+  "type": "object",
+  "required": [ "type", "attributes" ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Resource type name.",
+      "enum": [ "iptable" ]
+    },
+    "config": {
+      "type": "string",
+      "description": "Config name"
+    },
+    "attributes": {
+      "$ref": "iptable.schema.json"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$id": "exec.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "exec",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string"
+    },
+    "create": {
+      "$ref": "command.schema.json"
+    },
+    "Read": {
+      "$ref": "command.schema.json"
+    },
+    "Update": {
+      "$ref": "command.schema.json"
+    },
+    "Delete": {
+      "$ref": "command.schema.json"
+    }
+  },
+  "required": [ "create" ]
+}

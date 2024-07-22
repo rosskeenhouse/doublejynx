@@ -1,0 +1,43 @@
+{
+  "$id": "network-route.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "network-route",
+  "type": "object",
+  "required": [ "to", "gateway", "interface", "rtid", "metric", "type", "scope" ],
+  "properties": {
+    "to": {
+      "type": "string"
+    },
+    "gateway": {
+      "type": "string"
+    },
+    "interface": {
+      "type": "string"
+    },
+    "rtid": {
+      "type": "string",
+      "description": "Network route table id",
+      "pattern": "^(local|main|default|all|[0-9]+)$"
+    },
+    "metric": {
+      "type": "integer",
+      "description": "Network route metric",
+      "minimum": 0
+    },
+    "type": {
+      "type": "string",
+      "description": "Network route type",
+      "pattern": "^(unicast|local|broadcast|multicast|throw|unreachable|prohibit|blackhole|nat|[0-9]+)$"
+    },
+    "scope": {
+      "type": "string",
+      "description": "Network route scope",
+      "pattern": "^(host|link|global|[0-9]+)$"
+    },
+    "proto": {
+      "type": "string",
+      "description": "Network route scope",
+      "pattern": "^(kernel|boot|static|[0-9]+)$"
+    }
+  }
+}

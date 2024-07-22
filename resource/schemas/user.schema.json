@@ -1,0 +1,40 @@
+{
+  "$id": "user.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "user",
+  "description": "A user account",
+  "type": "object",
+  "required": [ "name" ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[_a-z]([-_a-z0-9]{0,31})$"
+    },
+    "uid": {
+      "type": "string",
+      "pattern": "^[0-9]*$"
+    },
+    "group": {
+      "type": "string"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "gecos": {
+      "type": "string",
+      "description": "User description"
+    },
+    "createhome": {
+      "type": "boolean",
+      "description": "create user home directory"
+    },
+    "shell": {
+      "type": "string",
+      "description": "login shell"
+    }
+  }
+}

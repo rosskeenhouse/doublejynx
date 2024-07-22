@@ -1,0 +1,68 @@
+{
+  "$id": "iptable.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "iptable",
+  "type": "object",
+  "required": [ "chain" ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "table": {
+      "type": "string",
+			"description": "Rule table name"
+    },
+    "chain": {
+      "type": "string",
+      "description": "Rule chain name"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination CIDR",
+      "pattern": "^([0-9]{1,3}\\.){3}[0-9]{1,3}/([0-9]|[1-2][0-9]|3[0-2])$"
+		},
+    "source": {
+      "type": "string",
+      "description": "Source CIDR",
+      "pattern": "^([0-9]{1,3}\\.){3}[0-9]{1,3}/([0-9]|[1-2][0-9]|3[0-2])$"
+    },
+    "in": {
+      "type": "string",
+			"description": "Input ethernet device"
+		},
+    "out": {
+      "type": "string",
+			"description": "Output ethernet device"
+		},
+    "match": {
+      "type": "array",
+      "description": "Rule match extensions",
+      "items": {
+        "type": "string"
+      }
+		},
+    "extension_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "proto": {
+      "type": "string",
+			"description": "Rule protocol",
+      "pattern": "^(tcp|udp|udplite|icmp|icmpv6|ESP|AH|sctp|mh|all|[0-9]+)$"
+		},
+    "jump": {
+      "type": "string"
+		}
+  }
+}

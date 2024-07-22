@@ -1,0 +1,55 @@
+{
+  "$id": "file.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "file",
+  "type": "object",
+  "required": [ "path", "filetype" ],
+  "properties": {
+    "path": {
+      "type": "string",
+			"description": "file path",
+			"minLength": 1
+    },
+    "owner": {
+      "type": "string"
+    },
+    "group": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "atime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "file access time in YYYY-MM-DDTHH:MM:SS.sssssssssZ format."
+    },
+    "ctime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "file change time in YYYY-MM-DDTHH:MM:SS.sssssssssZ format."
+    },
+    "mtime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "file modified time in YYYY-MM-DDTHH:MM:SS.sssssssssZ format."
+    },
+    "content": {
+      "type": "string",
+      "description": "file content"
+    },
+    "sourceref": {
+      "type": "string",
+      "description": "file content source uri"
+    },
+    "target": {
+      "type": "string",
+      "description": "Symbolic link target path"
+    },
+    "filetype": {
+      "type": "string",
+      "description": "file type",
+      "enum": [ "regular", "directory", "block", "char", "pipe", "symlink", "socket" ]
+    }
+  }
+}

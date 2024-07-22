@@ -1,0 +1,31 @@
+{
+  "$id": "http.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "http",
+  "type": "object",
+  "required": [ "endpoint" ],
+  "properties": {
+    "endpoint": {
+      "type": "string"
+    },
+    "headers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "HTTP header name"
+          },
+          "value": {
+            "type": "string",
+            "description": "HTTP header value"
+          }
+        }
+      }
+    },
+    "body": {
+      "type": "string"
+    }
+  }
+}

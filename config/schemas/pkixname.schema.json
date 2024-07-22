@@ -1,0 +1,65 @@
+{
+  "$id": "pkixname.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "pkixname",
+  "type": "object",
+  "properties": {
+    "Country": {
+      "type": "array",
+			"description": "Country name",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Organization": {
+      "type": "array",
+			"description": "Organization name",
+      "items": {
+        "type": "string"
+      }
+    },
+    "OrganizationalUnit": {
+      "type": "array",
+			"description": "Organizational Unit name",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Locality": {
+      "type": "array",
+			"description": "Locality name",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Province": {
+      "type": "array",
+			"description": "Province name",
+      "items": {
+        "type": "string"
+      }
+    },
+    "StreetAddress": {
+      "type": "array",
+			"description": "Street address",
+      "items": {
+        "type": "string"
+      }
+    },
+    "PostalCode": {
+      "type": "array",
+			"description": "Postal Code",
+      "items": {
+        "type": "string"
+      }
+    },
+    "SerialNumber": {
+      "type": "string",
+      "description": ""
+    },
+    "CommonName": {
+      "type": "string",
+      "description": "Name"
+    }
+  }
+}

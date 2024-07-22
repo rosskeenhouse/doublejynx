@@ -1,0 +1,18 @@
+{
+  "$id": "group.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "group-declaration",
+  "description": "A group account",
+  "type": "object",
+  "required": [ "name" ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[_a-z]([-_a-z0-9]{0,31})$"
+    },
+    "gid": {
+      "type": "string",
+      "pattern": "^[0-9]*$"
+    }
+  }
+}

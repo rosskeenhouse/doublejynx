@@ -1,0 +1,26 @@
+{
+  "$id": "package.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "package",
+  "type": "object",
+  "required": [ "name", "type" ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9+._]+$"
+    },
+    "required": {
+      "description": "version requirement",
+      "type": "string",
+      "pattern": "^([><~=]{0,2}[-_a-zA-Z0-9+.]+|)$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "description": "package type",
+      "enum": [ "rpm", "deb", "yum", "dnf", "apt", "apk", "pip", "go" ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$id": "storagetransition.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "storagetransition",
+  "type": "string",
+  "description": "Storage state transition",
+  "enum": [ "absent", "present", "create", "read", "update", "delete" ]
+}
+

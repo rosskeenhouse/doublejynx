@@ -1,0 +1,9 @@
+{
+  "$id": "processtransition.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "processtransition",
+  "type": "string",
+  "description": "Process state transition",
+  "enum": [ "absent", "start_create", "present", "created", "restarting", "running", "paused", "exited", "dead", "start_delete", "start_read", "start_update" ]
+}
+

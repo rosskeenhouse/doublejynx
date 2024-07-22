@@ -1,0 +1,17 @@
+{
+  "$id": "container-network-declaration.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "container-network-declaration",
+  "type": "object",
+  "required": [ "type", "attributes" ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Resource type name.",
+      "enum": [ "container-network" ]
+    },
+    "attributes": {
+      "$ref": "container-network.schema.json"
+    }
+  }
+}

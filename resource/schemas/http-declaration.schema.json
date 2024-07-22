@@ -1,0 +1,21 @@
+{
+  "$id": "http-declaration.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "http-declaration",
+  "type": "object",
+  "required": [ "type", "attributes" ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Resource type name.",
+      "enum": [ "http" ]
+    },
+    "config": {
+      "type": "string",
+      "description": "Config name."
+    },
+    "attributes": {
+      "$ref": "http.schema.json"
+    }
+  }
+}
