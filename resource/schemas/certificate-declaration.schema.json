@@ -1,0 +1,17 @@
+{
+  "$id": "certificate-declaration.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "certificate-declaration",
+  "type": "object",
+  "required": [ "type", "attributes" ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Resource type name.",
+      "enum": [ "certificate" ]
+    },
+    "attributes": {
+      "$ref": "certificate.schema.json"
+    }
+  }
+}

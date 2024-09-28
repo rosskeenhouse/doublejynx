@@ -3,8 +3,18 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "document",
   "type": "object",
-  "required": [ "resources" ],
+  "required": [
+  ],
   "properties": {
+    "configurations": {
+      "type": "array",
+      "description": "Configurations list",
+      "items": {
+        "oneOf": [
+          { "$ref": "config/block.schema.json" }
+        ]
+      }
+    },
     "resources": {
       "type": "array",
       "description": "Resources list",
@@ -28,4 +38,3 @@
     }
   }
 }
-

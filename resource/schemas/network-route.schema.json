@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "network-route",
   "type": "object",
-  "required": [ "to", "gateway", "interface", "rtid", "metric", "type", "scope" ],
+  "required": [ "to", "gateway", "interface", "rtid", "metric", "routetype", "scope" ],
   "properties": {
     "to": {
       "type": "string"
@@ -24,7 +24,7 @@
       "description": "Network route metric",
       "minimum": 0
     },
-    "type": {
+    "routetype": {
       "type": "string",
       "description": "Network route type",
       "pattern": "^(unicast|local|broadcast|multicast|throw|unreachable|prohibit|blackhole|nat|[0-9]+)$"
